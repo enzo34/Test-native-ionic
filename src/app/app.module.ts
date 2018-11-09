@@ -10,6 +10,9 @@ import { SingleViewPage } from '../pages/single-view/single-view';
 import { NewViewPage } from '../pages/new-view/new-view';
 import { SetCoordinatesPage } from '../pages/set-coordinates/set-coordinates';
 import { PictureViewService } from '../services/pictureView.service';
+import { AgmCoreModule } from '@agm/core'
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { PictureViewService } from '../services/pictureView.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyDXeWeN7M-Eir6lQSeg3QPfHXTYYRswffQ'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,6 +37,7 @@ import { PictureViewService } from '../services/pictureView.service';
   ],
   providers: [
     PictureViewService,
+    Geolocation,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
