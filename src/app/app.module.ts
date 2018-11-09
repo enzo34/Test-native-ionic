@@ -12,6 +12,7 @@ import { SetCoordinatesPage } from '../pages/set-coordinates/set-coordinates';
 import { PictureViewService } from '../services/pictureView.service';
 import { AgmCoreModule } from '@agm/core'
 import { Geolocation } from '@ionic-native/geolocation';
+import { environment as ENV, environment } from '../environments/environments';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { Geolocation } from '@ionic-native/geolocation';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyDXeWeN7M-Eir6lQSeg3QPfHXTYYRswffQ'})
+    AgmCoreModule.forRoot({apiKey: environment.apiKeyGoogle})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
